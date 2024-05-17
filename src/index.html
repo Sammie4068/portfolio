@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/utilities.css" />
   </head>
   <body>
+
     <header id="hero">
       <!-- Navbar -->
       <nav class="navbar">
@@ -64,7 +65,7 @@
         <h1>Hi, I'm Okoro Samuel</h1>
 
         <div class="content-text">
-          <h2>Frontend Developer</h2>
+          <h2>Web Developer</h2>
           <h2></h2>
 
           <p>
@@ -74,8 +75,8 @@
           </p>
         </div>
         <a href="tel:+2347034824815" class="btn btn-secondary" target="_blank"
-          >Connect With Me</a
-        >
+          >Connect With Me <img class="phone" src="assets/phone.svg" />
+        </a>
       </section>
     </header>
 
@@ -154,7 +155,12 @@
         <h2>Contact</h2>
         <p>Get in touch with me</p>
       </div>
-      <form action="https://getform.io/f/ebpdywnb" method="post" class="contact-form" id="emailForm">
+      <form
+        action="https://getform.io/f/ebpdywnb"
+        method="post"
+        class="contact-form"
+        id="emailForm"
+      >
         <div class="contact-form-content">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" required />
@@ -169,7 +175,7 @@
         </div>
         <div class="contact-form-content">
           <label for="message">Description</label>
-          <textarea name="message" id="message" cols="0" rows="7"> </textarea> 
+          <textarea name="message" id="message" cols="0" rows="7"> </textarea>
         </div>
 
         <div class="submitMsg">
@@ -201,6 +207,10 @@
         </div>
       </div>
     </footer>
+
+    <div class="overlay" hidden></div>
+
+
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,11 +1,18 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const overlay = document.querySelector(".overlay");
 
 hamburger.addEventListener("click", mobileMenu);
 
 function mobileMenu() {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
+  overlay.hidden = !overlay.hidden;
+  if (!overlay.hidden) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 }
 
 // Close navbar when link is clicked
@@ -25,25 +32,15 @@ const toggleSwitch = document.querySelector(
 
 function switchTheme(e) {
   if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
     document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
   }
 }
 
 toggleSwitch.addEventListener("change", switchTheme, true);
-
-//  Store color theme for future visits
-
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark"); //add this
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light"); //add this
-  }
-}
 
 // Save user preference on load
 
@@ -54,14 +51,7 @@ const currentTheme = localStorage.getItem("theme")
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
 
-  if (currentTheme === "dark") {
+  if (currentTheme === "light") {
     toggleSwitch.checked = true;
   }
 }
-
-//Adding date
-
-let myDate = document.querySelector("#datee");
-
-const yes = new Date().getFullYear();
-myDate.innerHTML = yes;
