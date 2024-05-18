@@ -28,7 +28,11 @@ overlay.addEventListener("click", closeMenu);
 function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
-  overlayEvent();
+
+  if (window.matchMedia("(max-width: 670px)").matches) {
+    overlayEvent();
+    console.log("mobile");
+  }
 }
 
 // Event Listeners: Handling toggle event
